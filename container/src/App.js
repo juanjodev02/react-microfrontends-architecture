@@ -4,7 +4,7 @@ const MarketingApp =  lazy(() => import("./components/MarketingApp"));
 export default () => {
     return (
         <div>
-            <h1>Container</h1>
+            <h1>Container app</h1>
             <hr />
             <Suspense fallback={<div>Loading...</div>}>
                 <MarketingApp />
