@@ -16,17 +16,6 @@ const devConfig = {
         }
     },
     plugins: [
-        new ModuleFederationPlugin({
-            name: 'marketing',
-            filename: 'remoteEntry.js',
-            exposes: {
-                './MarketingApp': './src/bootstrap'
-            },
-            /**
-             * Here we define the shared modules to use.
-             */
-            shared: PackageJson.dependencies,
-        }),
         new HtmlWebpackPlugin({
             template: './public/index.html'
         }),
