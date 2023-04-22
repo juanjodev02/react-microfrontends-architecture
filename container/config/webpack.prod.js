@@ -10,7 +10,7 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename: '[name].[contenthash].js',
-        publicPath: '/container/latest/',
+        publicPath: '/container/latest/', //this changes the path of the js file imported in index.html file.
     },
     plugins: [
         new ModuleFederationPlugin({
