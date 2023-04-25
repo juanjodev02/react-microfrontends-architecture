@@ -4,15 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const devConfig = {
     mode: 'development',
+    output: {
+        publicPath: 'http://localhost:8082/'
+    },
     devServer: {
-        port: 8081,
+        port: 8082,
         historyApiFallback: {
             index: '/',
             disableDotRule: true
         }
-    },
-    output: {
-        publicPath: 'http://localhost:8081/'
     },
     devtool: 'eval-cheap-source-map',
     plugins: [
