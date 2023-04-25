@@ -15,7 +15,7 @@ const devConfig = {
     output: {
         publicPath: 'http://localhost:8080/'
     },
-    devtool: 'eval-cheap-source-map',
+    devtool: 'cheap-module-source-map',
     plugins: [
         new ModuleFederationPlugin({
             name: 'container',

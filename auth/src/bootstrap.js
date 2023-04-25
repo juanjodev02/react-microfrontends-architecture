@@ -8,6 +8,7 @@ import App from './App'
  * @property {function} [onNavigate] - callback to be called when navigation occurs
  * @property {object} defaultHistory - default history object
  * @property {string} initialPath - initial path
+ * @property {function} [onSignIn] - callback to be called when user signs in
  */
 
 /**
@@ -21,7 +22,12 @@ import App from './App'
  * @param {MountOptions} options - options
  * @returns {MountResponseObject}  - object containing onParentNavigate function
  */
-const mount =  (el, { onNavigate, defaultHistory, initialPath= '' } = {}) => {
+const mount =  (el, {
+    onNavigate = () => {},
+    defaultHistory,
+    initialPath= '',
+    onSignIn = () => {}
+} = {}) => {
     /**
      * Create memory history for react router
      */
@@ -32,15 +38,13 @@ const mount =  (el, { onNavigate, defaultHistory, initialPath= '' } = {}) => {
     /**
      * Add event listener to notify to container when navigation occurs
      */
-    if (onNavigate) {
-        history.listen(onNavigate);
-    }
+    history.listen(onNavigate);
 
     /**
      * Render the app
      */
     ReactDOM.render(
-        <App history={history} />,
+        <App history={history} onSignIn={onSignIn} />,
         el
     );
 
