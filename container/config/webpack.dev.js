@@ -32,6 +32,11 @@ const devConfig = {
                  * The key 'auth' is the name of the remote.
                  */
                 auth: 'auth@http://localhost:8082/remoteEntry.js',
+
+                /**
+                 * The key 'dashboard' is the name of the remote.
+                 */
+                dashboard: 'dashboard@http://localhost:8083/remoteEntry.js',
             },
             /**
              * Here we define the shared modules to use.
