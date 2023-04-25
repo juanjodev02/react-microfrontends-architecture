@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-    container: {
+    errorContainer: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -12,10 +12,10 @@ const useStyles = makeStyles((theme) => ({
         flex: 1,
         height: '100%'
     },
-    error: {
+    errorMessage: {
         color: theme.palette.error.main
     },
-    title: {
+    errorTitle: {
         color: theme.palette.primary.main,
         fontFamily: 'Roboto',
     }
@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
 const Error = ({ error }) => {
     const classes = useStyles();
     return (
-        <section className={classes.container}>
-            <h1 className={classes.title}>Something were wrong</h1>
-            <div className={classes.error}>{error}</div>
+        <section className={classes.errorContainer}>
+            <h1 className={classes.errorTitle}>Something were wrong</h1>
+            <div className={classes.errorMessage}>{error}</div>
         </section>
     );
 }
